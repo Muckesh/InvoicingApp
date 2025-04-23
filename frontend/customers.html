@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Management</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Billing System</h1>
+        <nav>
+            <a href="index.html">New Invoice</a>
+            <a href="invoices.html">View Invoices</a>
+            <a href="customers.html">Customers</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="page-header">
+            <h2>Customer Management</h2>
+            <button id="addCustomerBtn" class="btn-primary">+ Add Customer</button>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" id="customerSearch" placeholder="Search customers...">
+        </div>
+
+        <table id="customersTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Invoices</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="customersBody">
+                <!-- Customers will be loaded here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Customer Modal (same as in index.html) -->
+    <div id="customerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modalTitle">Add New Customer</h3>
+            <form id="customerForm">
+                <input type="hidden" id="customerId">
+                <div class="form-group">
+                    <label for="customerName">Name*</label>
+                    <input type="text" id="customerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="customerEmail">Email</label>
+                    <input type="email" id="customerEmail">
+                </div>
+                <div class="form-group">
+                    <label for="customerPhone">Phone</label>
+                    <input type="tel" id="customerPhone">
+                </div>
+                <div class="form-group">
+                    <label for="customerAddress">Address</label>
+                    <textarea id="customerAddress" rows="3"></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Save</button>
+                    <button type="button" id="deleteCustomerBtn" class="btn-danger hidden">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/customers.js"></script>
+</body>
+</html>
