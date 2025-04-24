@@ -1,0 +1,125 @@
+{
+  "Version": 1,
+  "Hash": "8LR1OhlxfjscvpFgXKSRV51SCxe2bZs2k6dmlde56TE=",
+  "Source": "InvoiceApp",
+  "BasePath": "_content/InvoiceApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "InvoiceApp\\wwwroot",
+      "Source": "InvoiceApp",
+      "ContentRoot": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\wwwroot\\",
+      "BasePath": "_content/InvoiceApp",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\wwwroot\\index.html",
+      "SourceId": "InvoiceApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\wwwroot\\",
+      "BasePath": "_content/InvoiceApp",
+      "RelativePath": "index#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4cvea1net3",
+      "Integrity": "JHQghH4cXexCxKjNn6H5FKxuuI6NtXQ0PBDDbPfm3F8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "index.4cvea1net3.html",
+      "AssetFile": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "27256"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JHQghH4cXexCxKjNn6H5FKxuuI6NtXQ0PBDDbPfm3F8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 24 Apr 2025 10:00:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4cvea1net3"
+        },
+        {
+          "Name": "label",
+          "Value": "index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JHQghH4cXexCxKjNn6H5FKxuuI6NtXQ0PBDDbPfm3F8="
+        }
+      ]
+    },
+    {
+      "Route": "index.html",
+      "AssetFile": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\wwwroot\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "27256"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JHQghH4cXexCxKjNn6H5FKxuuI6NtXQ0PBDDbPfm3F8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 24 Apr 2025 10:00:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-JHQghH4cXexCxKjNn6H5FKxuuI6NtXQ0PBDDbPfm3F8="
+        }
+      ]
+    }
+  ]
+}
