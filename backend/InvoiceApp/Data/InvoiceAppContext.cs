@@ -5,8 +5,8 @@ namespace InvoiceApp.Data
 {
     public class InvoiceAppContext : DbContext
     {
-        public InvoiceAppContext( DbContextOptions<InvoiceAppContext> options) : base(options)
-        { 
+        public InvoiceAppContext(DbContextOptions<InvoiceAppContext> options) : base(options)
+        {
 
         }
 

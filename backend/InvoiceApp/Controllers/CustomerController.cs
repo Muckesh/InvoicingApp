@@ -26,7 +26,7 @@ namespace InvoiceApp.Controllers
 
         // GET : api/Customer/id
         [HttpGet("{id}")]
-        public async Task<ActionResult<Customer>> GetCustomer (int id)
+        public async Task<ActionResult<Customer>> GetCustomer(int id)
         {
             var customer = await _context.Customers.FindAsync(id);
             if (customer == null)
