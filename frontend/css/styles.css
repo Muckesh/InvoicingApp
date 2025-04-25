@@ -1,0 +1,131 @@
+body{
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1,h2{
+    color: #2c3e50;
+}
+
+.section{
+    margin-bottom: 30px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th,td{
+    padding: 12px;
+    text-align: left;
+}
+
+th{
+    background-color: #3498db;
+    color: white;
+}
+
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+button{
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover{
+    background-color: #2980b9;
+}
+
+input,select {
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.form-group{
+    margin-bottom: 15px;
+    margin-right: 15px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group{
+    flex: 1;
+}
+
+.invoice-items {
+    margin-top: 20px;
+}
+
+.item-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.item-row select, .item-row input {
+    flex: 1;
+}
+
+.item-row button {
+    flex: 0 0 auto;
+    padding: 8px 12px;
+}
+
+.hidden {
+    display: none;
+}
+
+#invoice-preview {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background: white;
+}
+
+.invoice-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.invoice-totals{
+    margin-top: 20px;
+    text-align: right;
+}
+
+.total-amount {
+    font-size: 1.5em;
+    font-weight: bold;
+}

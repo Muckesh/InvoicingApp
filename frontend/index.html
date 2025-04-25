@@ -3,115 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Invoice</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Invoice Generator</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Billing System</h1>
-        <nav>
-            <a href="index.html">New Invoice</a>
-            <a href="invoices.html">View Invoices</a>
-            <a href="customers.html">Customers</a>
-        </nav>
-    </header>
-
     <div class="container">
-        <h2>Create New Invoice</h2>
-        
-        <div class="form-group">
-            <label for="customer">Customer:</label>
-            <select id="customer" required>
-                <option value="">Select Customer</option>
-            </select>
-            <button id="addCustomerBtn" class="btn-secondary">+ New Customer</button>
-        </div>
+        <h1>Invoice Generator</h1>
 
-        <div class="form-row">
-            <div class="form-group">
-                <label for="invoiceDate">Invoice Date:</label>
-                <input type="date" id="invoiceDate" required>
-            </div>
-            <div class="form-group">
-                <label for="dueDate">Due Date:</label>
-                <input type="date" id="dueDate" required>
-            </div>
-        </div>
+        <!-- Customers section -->
 
-        <div class="invoice-items">
-            <table id="itemsTable">
+        <div class="section">
+            <h1>Customers</h1>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="customer-name">Name</label>
+                    <input type="text" id="customer-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-email">Email</label>
+                    <input type="email" id="customer-email">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="customer-phone">Phone</label>
+                    <input type="tel" id="customer-phone">
+                </div>
+                <div class="form-group">
+                    <label for="customer-address">Address</label>
+                    <input type="text" id="customer-address">
+                </div>
+            </div>
+            <button id="add-customer">Add Customer</button>
+            <h3>Customer List</h3>
+            <table id="customers-table">
                 <thead>
                     <tr>
-                        <th>Item</th>
-                        <th>Description</th>
-                        <th>Qty</th>
-                        <th>Price</th>
-                        <th>Tax %</th>
-                        <th>Total</th>
-                        <th></th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody id="itemsBody">
-                    <!-- Items will be added here -->
+                <tbody>
+                    <!-- Dynamic Table Data goes here -->
+                    <!-- eg -->
+                    <tr>
+                        <td>1</td>
+                        <td>Muckesh K S</td>
+                        <td>muckesh@gmail.com</td>
+                        <td>9789971368</td>
+                        <td><button>Delete</button></td>
+                    </tr>
                 </tbody>
             </table>
-            <button id="addItemBtn" class="btn-secondary">+ Add Item</button>
         </div>
 
-        <div class="invoice-totals">
-            <div class="total-row">
-                <span>Subtotal:</span>
-                <span id="subtotal">$0.00</span>
+        <!-- Products section -->
+
+        <div class="section">
+            <h1>Products</h1>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="product-name">Name</label>
+                    <input type="text" id="product-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-price">Price</label>
+                    <input type="number" id="product-price" min="0" required>
+                </div>
             </div>
-            <div class="total-row">
-                <span>Tax:</span>
-                <span id="tax">$0.00</span>
+            <div class="form-group">
+                <label for="product-description">Description</label>
+                <input type="text" id="product-description">
             </div>
-            <div class="total-row grand-total">
-                <span>Total:</span>
-                <span id="grandTotal">$0.00</span>
-            </div>
+            <button>Add Product</button>
+            <h3>Product List</h3>
+            <table id = "products-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamic table datas -->
+                </tbody>
+            </table>
         </div>
 
-        <div class="form-group">
-            <label for="notes">Notes:</label>
-            <textarea id="notes" rows="3"></textarea>
-        </div>
+        <!-- Create Invoice section -->
+         <div class="section">
+            <h1>Create Invoice</h1>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="invoice-customer">Customer</label>
+                    <select id="invoice-customer" required>
+                        <!-- Dynamic customers list from api -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="invoice-due-date">Due Date</label>
+                    <!-- Will set default due date as 3o days from current date -->
+                    <input type="date" id="invoice-due-date" required>
+                </div>
+            </div>
+            <h2>Invoice Items</h2>
+            <div class="invoice-items">
+                <div class="item-row">
+                    <select class="invoice-product" required>
+                        <option value="">Select Product</option>
+                        <!-- will populate other options (product list) from api -->
+                    </select>
+                    <input type="number" min="1" class="invoice-quantity" value="1" required>
+                    <button class="add-item">Add Item</button>
+                </div>
+                <div id="invoice-items-list">
+                    <!-- Dynamically populate invoice items when added -->
+                </div>
+            </div>
+            <button id="create-invoice">Create Invoice</button>
 
-        <div class="form-actions">
-            <button id="saveDraftBtn" class="btn-secondary">Save Draft</button>
-            <button id="saveInvoiceBtn" class="btn-primary">Save Invoice</button>
-            <button id="printInvoiceBtn" class="btn-primary">Print/PDF</button>
-        </div>
+            <!-- invoice preview -->
+             <div id="invoice-preview" class="hidden">
+                <h2>Invoice Preview</h2>
+                <div class="invoice-header">
+                    <div>
+                        <h3 id="preview-customer-name"></h3>
+                        <div id="preview-customer-details"></div>
+                    </div>
+                    <div>
+                        <p><strong>Invoice # : </strong><span id="preview-invoice-id"></span></p>
+                        <p><strong>Date : </strong> <span id="preview-invoice-date"></span></p>
+                        <p><strong>Due Date : </strong> <span id="preview-invoice-due-date"></span></p>
+                    </div>
+                </div>
+                <table id="preview-items-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Description</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamice data from api -->
+                    </tbody>
+                </table>
+                <div class="invoice-totals">
+                    <p class="total-amount"> Total : Rs. <span id="preview-total-amount">0</span></p>
+                </div>
+
+                <button id="print-invoice">Print Invoice</button>
+                <button id="new-invoice">Create New Invoice</button>
+             </div>
+         </div>
+
+         <!-- Invoice List -->
+          <div class="section">
+            <h2>Invoice List</h2>
+            <table id="invoices-table">
+                <thead>
+                    <tr>
+                        <th>Invoice #</th>
+                        <th>Customer</th>
+                        <th>Date</th>
+                        <th>Due Date</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamic datas from api -->
+                </tbody>
+            </table>
+          </div>
+
     </div>
 
-    <!-- Customer Modal -->
-    <div id="customerModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Add New Customer</h3>
-            <form id="customerForm">
-                <div class="form-group">
-                    <label for="customerName">Name*</label>
-                    <input type="text" id="customerName" required>
-                </div>
-                <div class="form-group">
-                    <label for="customerEmail">Email</label>
-                    <input type="email" id="customerEmail">
-                </div>
-                <div class="form-group">
-                    <label for="customerPhone">Phone</label>
-                    <input type="tel" id="customerPhone">
-                </div>
-                <div class="form-group">
-                    <label for="customerAddress">Address</label>
-                    <textarea id="customerAddress" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn-primary">Save Customer</button>
-            </form>
-        </div>
-    </div>
 
-    <script src="js/invoice.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
