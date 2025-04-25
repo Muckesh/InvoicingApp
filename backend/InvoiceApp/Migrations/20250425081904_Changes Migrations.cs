@@ -5,7 +5,7 @@
 namespace InvoiceApp.Migrations
 {
     /// <inheritdoc />
-    public partial class CreateMigration : Migration
+    public partial class ChangesMigrations : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

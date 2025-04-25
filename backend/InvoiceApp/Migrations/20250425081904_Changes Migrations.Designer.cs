@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InvoiceApp.Migrations
 {
     [DbContext(typeof(InvoiceAppContext))]
-    [Migration("20250424103550_Create Migration")]
-    partial class CreateMigration
+    [Migration("20250425081904_Changes Migrations")]
+    partial class ChangesMigrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -130,8 +130,9 @@ namespace InvoiceApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<string>("Price")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ProductId");
 

@@ -3,10 +3,13 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 // Add DbContext
 builder.Services.AddDbContext<InvoiceAppContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Add services to the container.
+
+builder.Services.AddControllers();
 
 // Add CORS policy
 builder.Services.AddCors(options =>
@@ -19,9 +22,6 @@ builder.Services.AddCors(options =>
     });
 });
 
-// Add services to the container.
-
-builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -35,19 +35,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("AllowAll");
+
 app.UseHttpsRedirection();
 
-app.UseCors("AllowAll");
-app.UseStaticFiles();
-app.UseRouting();
-
 app.UseAuthorization();
-
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllers();
-    endpoints.MapFallbackToFile("index.html");
-});
 
 app.MapControllers();
 

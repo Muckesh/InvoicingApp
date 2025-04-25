@@ -1,14 +1,13 @@
-﻿namespace InvoiceApp.Data
-{
-    using InvoiceApp.Models;
-    using System.Collections.Generic;
-    using System.Reflection.Emit;
-    using Microsoft.EntityFrameworkCore;
+﻿using InvoiceApp.Models;
+using Microsoft.EntityFrameworkCore;
 
+namespace InvoiceApp.Data
+{
     public class InvoiceAppContext : DbContext
     {
-        public InvoiceAppContext(DbContextOptions<InvoiceAppContext> options) : base(options)
-        {
+        public InvoiceAppContext( DbContextOptions<InvoiceAppContext> options) : base(options)
+        { 
+
         }
 
         public DbSet<Customer> Customers { get; set; }

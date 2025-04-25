@@ -11,7 +11,7 @@ namespace InvoiceApp.Models
         public decimal TotalAmount { get; set; }
         public string Status { get; set; }
         public Customer Customer { get; set; }
-        public List<InvoiceItem> Items { get; set; } = new List<InvoiceItem>();
+        public List<InvoiceItem> Items { get; set; }
     }
 
     public class InvoiceItem
@@ -29,7 +29,10 @@ namespace InvoiceApp.Models
     {
         public int CustomerId { get; set; }
         public DateTime DueDate { get; set; }
-        public List<InvoiceItemRequest> Items { get; set; }
+        public List<InvoiceItemRequest> Items
+        {
+            get; set;
+        }
     }
 
     public class InvoiceItemRequest
