@@ -14,7 +14,7 @@ const invoiceItemsList = document.getElementById('invoice-items-list');
 const invoicePreview = document.getElementById('invoice-preview');
 
 // API URLS
-const apiUrl = "http://localhost:5210";
+const apiUrl = "http://localhost:5173";
 const customersUrl = `${apiUrl}/api/customer`;
 const productsUrl = `${apiUrl}/api/product`;
 const invoicesUrl = `${apiUrl}/api/invoice`;
@@ -40,7 +40,7 @@ async function loadCustomers() {
         customers = await response.json();
 
         renderCustomers();
-        // updateCustomerDropdowns();
+        updateCustomerDropdowns();
 
     } catch (error) {
         console.error("Error loading customers : ",error);      
@@ -104,4 +104,32 @@ async function addCustomer() {
     } catch (error) {
         console.error('Error adding customer : ',error);
     }
+}
+
+async function deleteCustomer(id) {
+    if(!confirm("Are you sure you want to delete this customer?")) return;
+
+    try {
+        const response = await fetch(`${customersUrl}/${id}`,{
+            method: "DELETE"
+        });
+
+        if (response.ok) {
+            loadCustomers();
+        }else{
+            alert("Error deleting customer");
+        }
+    } catch (error) {
+        console.error("Error deleting customer : ",error);
+    }
+}
+
+function updateCustomerDropdowns(){
+    invoiceCustomerSelect.innerHTML = `<option value = "">Select Customer</option>`;
+    customers.forEach(customer => {
+        const option = document.createElement('option');
+        option.value=customer.customerId;
+        option.textContent = customer.name;
+        invoiceCustomerSelect.appendChild(option);
+    });
 }
