@@ -28,9 +28,11 @@ document.addEventListener("DOMContentLoaded", function(){
     document.getElementById('invoice-due-date').valueAsDate = dueDate;
 
     loadCustomers();
+    loadProducts();
 
     // setting up event listeners
     document.getElementById('add-customer').addEventListener('click', addCustomer);
+    document.getElementById('add-product').addEventListener('click',addProduct);
 });
 
 // load customers from API
@@ -131,5 +133,109 @@ function updateCustomerDropdowns(){
         option.value=customer.customerId;
         option.textContent = customer.name;
         invoiceCustomerSelect.appendChild(option);
+    });
+}
+
+async function loadProducts() {
+    try {
+        const response = await fetch(productsUrl);
+        products = await response.json();
+
+        renderProducts();
+        updateProductDropdowns();
+
+
+    } catch (error) {
+        console.error("Error Loading products : ",error);
+    }
+}
+
+function renderProducts(){
+    productsTable.innerHTML="";
+    products.forEach(product => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${product.productId}</td>
+            <td>${product.name}</td>
+            <td>${product.description || ''}</td>
+            <td>${product.price.toFixed(2)}</td>
+            <td>
+                <button onclick="deleteProduct(${product.productId})">Delete</button>
+            </td>
+        `;
+        productsTable.appendChild(row);
+    });
+}
+
+async function addProduct() {
+    const name = document.getElementById("product-name").value.trim();
+    const price = parseInt(document.getElementById("product-price").value);
+    const description = document.getElementById("product-description").value.trim();
+    // console.log("price : ",price, typeof price);
+    if(!name){
+        alert("Name field is required.");
+        return;
+    }
+
+    if(isNaN(price)){
+        alert("Valid price is required.");
+        return;
+    }
+
+    const product = {
+        name,
+        price,
+        description
+    }
+
+    try {
+        const response = await fetch(productsUrl,{
+            method: "POST",
+            headers: {
+                'Content-Type': "application/json"
+            },
+            body: JSON.stringify(product)
+        });
+
+        if (response.ok) {
+            document.getElementById("product-name").value = "";
+            document.getElementById("product-price").value = "";
+            document.getElementById("product-description").value = "";
+            loadProducts();
+            alert("Product added successfully");
+        }else{
+            alert("Error adding product");
+        }
+    } catch (error) {
+        console.error("Error adding product : ",error);
+    }
+}
+
+async function deleteProduct(id) {
+    alert("Are you sure you want to delete this product");
+
+    try {
+        const response = await fetch(`${productsUrl}/${id}`,{
+            method: "DELETE"
+        });
+
+        if(response.ok){
+            loadProducts();
+        }else{
+            alert("Error deleting product.");
+        }
+    } catch (error) {
+        console.error("Error deleting product : ",error);
+    }
+}
+
+function updateProductDropdowns(){
+    invoiceProductSelect.innerHTML = `<option value = "">Select Product</option>`;
+    products.forEach(product => {
+        const option = document.createElement('option');
+        option.value=product.productId;
+        option.textContent=product.name;
+
+        invoiceProductSelect.appendChild(option);
     });
 }
