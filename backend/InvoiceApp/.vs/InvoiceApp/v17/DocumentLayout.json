@@ -3,48 +3,44 @@
   "WorkspaceRootPath": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Migrations\\20250425104737_String to decimal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Migrations\\20250425104737_String to decimal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Controllers\\InvoiceController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\InvoiceController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3CAC2EF-B3C8-434F-ADA2-D77227718D97}|InvoiceApp.csproj|d:\\presidio\\invoicingapp\\backend\\invoiceapp\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3CAC2EF-B3C8-434F-ADA2-D77227718D97}|InvoiceApp.csproj|solutionrelative:models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Controllers\\CustomerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\CustomerController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3CAC2EF-B3C8-434F-ADA2-D77227718D97}|InvoiceApp.csproj|d:\\presidio\\invoicingapp\\backend\\invoiceapp\\migrations\\20250425104438_initial create.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3CAC2EF-B3C8-434F-ADA2-D77227718D97}|InvoiceApp.csproj|solutionrelative:migrations\\20250425104438_initial create.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3CAC2EF-B3C8-434F-ADA2-D77227718D97}|InvoiceApp.csproj|d:\\presidio\\invoicingapp\\backend\\invoiceapp\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3CAC2EF-B3C8-434F-ADA2-D77227718D97}|InvoiceApp.csproj|solutionrelative:controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3CAC2EF-B3C8-434F-ADA2-D77227718D97}|InvoiceApp.csproj|d:\\presidio\\invoicingapp\\backend\\invoiceapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3CAC2EF-B3C8-434F-ADA2-D77227718D97}|InvoiceApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Controllers\\ProductController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\ProductController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3CAC2EF-B3C8-434F-ADA2-D77227718D97}|InvoiceApp.csproj|d:\\presidio\\invoicingapp\\backend\\invoiceapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{E3CAC2EF-B3C8-434F-ADA2-D77227718D97}|InvoiceApp.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Models\\Invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\Invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3CAC2EF-B3C8-434F-ADA2-D77227718D97}|InvoiceApp.csproj|d:\\presidio\\invoicingapp\\backend\\invoiceapp\\data\\invoiceappcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3CAC2EF-B3C8-434F-ADA2-D77227718D97}|InvoiceApp.csproj|solutionrelative:data\\invoiceappcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Models\\Product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\Product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3CAC2EF-B3C8-434F-ADA2-D77227718D97}|InvoiceApp.csproj|d:\\presidio\\invoicingapp\\backend\\invoiceapp\\invoiceapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{E3CAC2EF-B3C8-434F-ADA2-D77227718D97}|InvoiceApp.csproj|solutionrelative:invoiceapp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Models\\Customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\Customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3CAC2EF-B3C8-434F-ADA2-D77227718D97}|InvoiceApp.csproj|d:\\presidio\\invoicingapp\\backend\\invoiceapp\\models\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3CAC2EF-B3C8-434F-ADA2-D77227718D97}|InvoiceApp.csproj|solutionrelative:models\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Data\\InvoiceAppContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Data\\InvoiceAppContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E3CAC2EF-B3C8-434F-ADA2-D77227718D97}|InvoiceApp.csproj|d:\\presidio\\invoicingapp\\backend\\invoiceapp\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3CAC2EF-B3C8-434F-ADA2-D77227718D97}|InvoiceApp.csproj|solutionrelative:models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E3CAC2EF-B3C8-434F-ADA2-D77227718D97}|InvoiceApp.csproj|d:\\presidio\\invoicingapp\\backend\\invoiceapp\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E3CAC2EF-B3C8-434F-ADA2-D77227718D97}|InvoiceApp.csproj|solutionrelative:controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\InvoiceApp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:InvoiceApp.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -59,71 +55,43 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20250425104737_String to decimal.cs",
-              "DocumentMoniker": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Migrations\\20250425104737_String to decimal.cs",
-              "RelativeDocumentMoniker": "Migrations\\20250425104737_String to decimal.cs",
-              "ToolTip": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Migrations\\20250425104737_String to decimal.cs",
-              "RelativeToolTip": "Migrations\\20250425104737_String to decimal.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA0AAAAAAAAAA==",
+              "Title": "InvoiceController.cs",
+              "DocumentMoniker": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Controllers\\InvoiceController.cs",
+              "RelativeDocumentMoniker": "Controllers\\InvoiceController.cs",
+              "ToolTip": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Controllers\\InvoiceController.cs",
+              "RelativeToolTip": "Controllers\\InvoiceController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T10:47:37.836Z",
+              "WhenOpened": "2025-04-27T16:50:38.856Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "20250425104438_Initial create.cs",
-              "DocumentMoniker": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Migrations\\20250425104438_Initial create.cs",
-              "RelativeDocumentMoniker": "Migrations\\20250425104438_Initial create.cs",
-              "ToolTip": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Migrations\\20250425104438_Initial create.cs",
-              "RelativeToolTip": "Migrations\\20250425104438_Initial create.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T10:44:38.367Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T10:40:00.324Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T10:40:00.324Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-25T10:39:37.341Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T10:39:37.341Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "InvoiceAppContext.cs",
-              "DocumentMoniker": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Data\\InvoiceAppContext.cs",
-              "RelativeDocumentMoniker": "Data\\InvoiceAppContext.cs",
-              "ToolTip": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Data\\InvoiceAppContext.cs",
-              "RelativeToolTip": "Data\\InvoiceAppContext.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T10:39:17.285Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Product.cs",
               "DocumentMoniker": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Models\\Product.cs",
               "RelativeDocumentMoniker": "Models\\Product.cs",
@@ -131,73 +99,79 @@
               "RelativeToolTip": "Models\\Product.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T10:38:37.689Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T10:38:37.689Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "Invoice.cs",
               "DocumentMoniker": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Models\\Invoice.cs",
               "RelativeDocumentMoniker": "Models\\Invoice.cs",
               "ToolTip": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Models\\Invoice.cs",
               "RelativeToolTip": "Models\\Invoice.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAA9wCsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T10:38:17.884Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T10:38:17.884Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "Customer.cs",
               "DocumentMoniker": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Models\\Customer.cs",
               "RelativeDocumentMoniker": "Models\\Customer.cs",
               "ToolTip": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Models\\Customer.cs",
               "RelativeToolTip": "Models\\Customer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T10:37:59.014Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T10:37:59.014Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "InvoiceApp",
+              "DocumentIndex": 9,
+              "Title": "InvoiceApp.csproj",
               "DocumentMoniker": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\InvoiceApp.csproj",
               "RelativeDocumentMoniker": "InvoiceApp.csproj",
               "ToolTip": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\InvoiceApp.csproj",
               "RelativeToolTip": "InvoiceApp.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-25T10:37:37.972Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T10:37:37.972Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ProductController.cs",
               "DocumentMoniker": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
               "ToolTip": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Controllers\\ProductController.cs",
               "RelativeToolTip": "Controllers\\ProductController.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAhwCoAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAADkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T10:37:07.77Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T10:37:07.77Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 1,
               "Title": "CustomerController.cs",
               "DocumentMoniker": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Controllers\\CustomerController.cs",
               "RelativeDocumentMoniker": "Controllers\\CustomerController.cs",
               "ToolTip": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Controllers\\CustomerController.cs",
               "RelativeToolTip": "Controllers\\CustomerController.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAAAD0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T10:36:35.258Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T10:36:35.258Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "InvoiceAppContext.cs",
+              "DocumentMoniker": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Data\\InvoiceAppContext.cs",
+              "RelativeDocumentMoniker": "Data\\InvoiceAppContext.cs",
+              "ToolTip": "D:\\Presidio\\InvoicingApp\\backend\\InvoiceApp\\Data\\InvoiceAppContext.cs",
+              "RelativeToolTip": "Data\\InvoiceAppContext.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T10:39:17.285Z"
             }
           ]
         }
