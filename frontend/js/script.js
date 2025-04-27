@@ -29,10 +29,12 @@ document.addEventListener("DOMContentLoaded", function(){
 
     loadCustomers();
     loadProducts();
-
+    loadInvoices();
     // setting up event listeners
     document.getElementById('add-customer').addEventListener('click', addCustomer);
     document.getElementById('add-product').addEventListener('click',addProduct);
+    document.getElementById('create-invoice').addEventListener('click', createInvoice);
+    document.querySelector('.add-item').addEventListener('click', addInvoiceItem);
 });
 
 // load customers from API
@@ -238,4 +240,117 @@ function updateProductDropdowns(){
 
         invoiceProductSelect.appendChild(option);
     });
+}
+
+async function loadInvoices() {
+    try {
+        const response = await fetch(invoicesUrl);
+        invoices = await response.json();
+
+        renderInvoices();
+    } catch (error) {
+        console.error("Error loading invoice : ",error);
+    }
+}
+
+function renderInvoices(){
+    invoicesTable.innerHTML = "";
+    invoices.forEach(invoice => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${invoice.invoiceId}</td>
+            <td>${invoice.Customer.name}</td>
+            <td>${new Date(invoice.invoiceDate)}</td>
+            <td>${new Date(invoice.dueDate)}</td>
+            <td>${invoice.totalAmount.toFixed(2)}</td>
+            <td>${invoice.status}</td>
+            <td>
+                <button onclick = viewInvoice(${invoice.invoiceId}) >View</button>
+                <button onclick = deleteInvoice(${invoice.invoiceId}) >Delete</button>
+            </td>
+        `;
+        invoicesTable.appendChild(row);
+    });
+}
+
+function addInvoiceItem(){
+    const productSelect = this.parentElement.querySelector(".invoice-product");
+    const quantityInput = this.parentElement.querySelector(".invoice-quantity");
+
+    const productId = parseInt(productSelect.value);
+    const quantity = parseInt(quantityInput.value);
+
+    if (!productId || isNaN(quantity) || quantity<1) {
+        alert("Please select a product and a valid quantity.");
+        return;
+    }
+
+    const product = products.find(p => p.productId === productId );
+    currentInvoiceItems.push({
+        productId,
+        quantity,
+        unitPrice: product.price,
+        product
+    });
+
+    renderInvoiceItems();
+
+    productSelect.value="";
+    quantityInput.value="";
+}
+
+function renderInvoiceItems(){
+    invoiceItemsList.innerHTML="";
+    currentInvoiceItems.forEach((item, index) => {
+        const itemDiv = document.createElement('div');
+            itemDiv.className = 'item-row';
+            itemDiv.innerHTML = `
+                <input type="text" value="${item.product.name}" readonly>
+                <input type="number" value="${item.quantity}" readonly>
+                <input type="text" value="$${item.unitPrice.toFixed(2)}" readonly>
+                <input type="text" value="$${(item.quantity * item.unitPrice).toFixed(2)}" readonly>
+                <button onclick="removeInvoiceItem(${index})">Remove</button>
+            `;
+            invoiceItemsList.appendChild(itemDiv);
+    });
+}
+
+// Create a new invoice
+async function createInvoice() {
+    const customerId = parseInt(invoiceCustomerSelect.value);
+    const dueDate = document.getElementById('invoice-due-date').value;
+    
+    if (!customerId || !dueDate || currentInvoiceItems.length === 0) {
+        alert('Please select a customer, set a due date, and add at least one item');
+        return;
+    }
+    
+    const invoiceRequest = {
+        customerId,
+        dueDate,
+        items: currentInvoiceItems.map(item => ({
+            productId: item.productId,
+            quantity: item.quantity
+        }))
+    };
+    
+    try {
+        const response = await fetch(invoicesUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(invoiceRequest)
+        });
+        
+        if (response.ok) {
+            const invoice = await response.json();
+            viewInvoice(invoice.invoiceId);
+            loadInvoices();
+        } else {
+            alert('Error creating invoice');
+        }
+    } catch (error) {
+        console.error('Error creating invoice:', error);
+    }
 }
