@@ -35,6 +35,8 @@ document.addEventListener("DOMContentLoaded", function(){
     document.getElementById('add-product').addEventListener('click',addProduct);
     document.getElementById('create-invoice').addEventListener('click', createInvoice);
     document.querySelector('.add-item').addEventListener('click', addInvoiceItem);
+    document.getElementById('new-invoice').addEventListener('click', resetInvoiceForm);
+    document.getElementById('print-invoice').addEventListener('click', printInvoice);
 });
 
 // load customers from API
@@ -259,10 +261,10 @@ function renderInvoices(){
         const row = document.createElement("tr");
         row.innerHTML = `
             <td>${invoice.invoiceId}</td>
-            <td>${invoice.Customer.name}</td>
-            <td>${new Date(invoice.invoiceDate)}</td>
-            <td>${new Date(invoice.dueDate)}</td>
-            <td>${invoice.totalAmount.toFixed(2)}</td>
+            <td>${invoice.customer.name}</td>
+            <td>${new Date(invoice.invoiceDate).toLocaleDateString()}</td>
+            <td>${new Date(invoice.dueDate).toLocaleDateString()}</td>
+            <td>Rs. ${invoice.totalAmount.toFixed(2)}</td>
             <td>${invoice.status}</td>
             <td>
                 <button onclick = viewInvoice(${invoice.invoiceId}) >View</button>
@@ -296,35 +298,41 @@ function addInvoiceItem(){
     renderInvoiceItems();
 
     productSelect.value="";
-    quantityInput.value="";
+    quantityInput.value="1";
 }
+
 
 function renderInvoiceItems(){
     invoiceItemsList.innerHTML="";
     currentInvoiceItems.forEach((item, index) => {
         const itemDiv = document.createElement('div');
-            itemDiv.className = 'item-row';
-            itemDiv.innerHTML = `
-                <input type="text" value="${item.product.name}" readonly>
-                <input type="number" value="${item.quantity}" readonly>
-                <input type="text" value="$${item.unitPrice.toFixed(2)}" readonly>
-                <input type="text" value="$${(item.quantity * item.unitPrice).toFixed(2)}" readonly>
-                <button onclick="removeInvoiceItem(${index})">Remove</button>
-            `;
-            invoiceItemsList.appendChild(itemDiv);
+        itemDiv.className = "item-row";
+        itemDiv.innerHTML = `
+            <input type = "text" value = "${item.product.name}" readonly>
+            <input type = "number" value = "${item.quantity}" readonly>
+            <input type = "text" value = "Rs. ${item.unitPrice}" readonly>
+            <input type = "text" value = "Rs. ${item.unitPrice * item.quantity}" readonly>
+            <button onclick = "removeInvoiceItem(${index})" >Remove</button>
+        `;
+        invoiceItemsList.appendChild(itemDiv);
+        console.log(currentInvoiceItems);
+
     });
 }
 
-// Create a new invoice
+function removeInvoiceItem(index){
+    currentInvoiceItems.splice(index,1);
+    renderInvoiceItems();
+}
+
 async function createInvoice() {
     const customerId = parseInt(invoiceCustomerSelect.value);
     const dueDate = document.getElementById('invoice-due-date').value;
-    
     if (!customerId || !dueDate || currentInvoiceItems.length === 0) {
-        alert('Please select a customer, set a due date, and add at least one item');
+        alert("Please select a customer, due date and atleast one product.");
         return;
     }
-    
+
     const invoiceRequest = {
         customerId,
         dueDate,
@@ -333,24 +341,103 @@ async function createInvoice() {
             quantity: item.quantity
         }))
     };
-    
+
     try {
-        const response = await fetch(invoicesUrl, {
-            method: 'POST',
+        const response = await fetch(invoicesUrl,{
+            method: "POST",
             headers: {
-                'Content-Type': 'application/json'
+                "Content-Type": "application/json"
             },
             body: JSON.stringify(invoiceRequest)
         });
-        
+
         if (response.ok) {
             const invoice = await response.json();
             viewInvoice(invoice.invoiceId);
             loadInvoices();
-        } else {
-            alert('Error creating invoice');
+        }else{
+            alert("Error creating invoice");
         }
     } catch (error) {
-        console.error('Error creating invoice:', error);
+        console.error("Error creating invoice : ",error);
     }
 }
+
+async function deleteInvoice(id){
+    if (!confirm("Are you sure you want to delete the invoice?")) {
+        return;
+    }
+    try {
+        const response = await fetch(`${invoicesUrl}/${id}`,{
+            method: "DELETE"
+        });
+        if (response.ok) {
+            loadInvoices(); 
+            alert("Invoice deleted successfully.");
+        } else {
+            alert("Error deleting invoice.");
+        }
+    } catch (error) {
+        console.error("Error deleting invoice : ",error);        
+    }
+}
+
+async function viewInvoice(id) {
+    try {
+        const response = await fetch(`${invoicesUrl}/${id}`);
+        const invoice = await response.json();
+
+        // populate preview
+        document.getElementById("preview-invoice-id").textContent=invoice.invoiceId;
+        document.getElementById("preview-invoice-date").textContent = new Date(invoice.invoiceDate).toLocaleDateString();
+        document.getElementById("preview-invoice-due-date").textContent=new Date(invoice.dueDate).toLocaleDateString();
+        document.getElementById("preview-customer-name").textContent = invoice.customer.name;
+        
+        let customerDetails = "";
+        if (invoice.customer.email) customerDetails += `<p>Email: ${invoice.customer.email}</p>`;
+        if (invoice.customer.phone) customerDetails += `<p>Phone: ${invoice.customer.phone}</p>`;
+        if (invoice.customer.address) customerDetails += `<p>Address: ${invoice.customer.address}</p>`;
+        document.getElementById('preview-customer-details').innerHTML = customerDetails;
+        
+        const itemsTable = document.getElementById('preview-items-table').getElementsByTagName('tbody')[0];
+        itemsTable.innerHTML = '';
+
+        invoice.items.forEach(item => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${item.product.name}</td>
+                <td>${item.product.description || ''}</td>
+                <td>${item.quantity}</td>
+                <td>Rs. ${item.unitPrice.toFixed(2)}</td>
+                <td>Rs. ${(item.quantity * item.unitPrice).toFixed(2)}</td>
+            `;
+            itemsTable.appendChild(row);
+        });
+        
+        document.getElementById('preview-total-amount').textContent = invoice.totalAmount.toFixed(2);
+        
+        // Show preview
+        invoicePreview.classList.remove('hidden');
+        window.scrollTo(0, document.body.scrollHeight);
+
+    } catch (error) {
+        console.error('Error viewing invoice:', error);
+    }
+}
+
+function resetInvoiceForm() {
+    currentInvoiceItems = [];
+    invoiceItemsList.innerHTML = '';
+    invoiceCustomerSelect.value = '';
+    
+    const dueDate = new Date();
+    dueDate.setDate(dueDate.getDate() + 30);
+    document.getElementById('invoice-due-date').valueAsDate = dueDate;
+    
+    invoicePreview.classList.add('hidden');
+}
+
+function printInvoice() {
+    window.print();
+}
+
