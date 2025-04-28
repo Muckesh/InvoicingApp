@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 namespace InvoiceApp.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class InvoiceController : ControllerBase
     {
         private readonly InvoiceAppContext _context;
@@ -20,7 +20,8 @@ namespace InvoiceApp.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Invoice>>> GetInvoices()
         {
-            return await _context.Invoices.Include(i => i.Customer).Include(i => i.Items).ThenInclude(item => item.Product).ToListAsync();
+            var invoices = await _context.Invoices.Include(i => i.Customer).Include(i => i.Items).ThenInclude(item => item.Product).ToListAsync();
+            return Ok(invoices);
         }
 
         // GET : api/Invoice/id
