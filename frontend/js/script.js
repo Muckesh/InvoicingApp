@@ -441,3 +441,82 @@ function printInvoice() {
     window.print();
 }
 
+const downloadPdfBtn = document.getElementById('download-pdf');
+downloadPdfBtn.addEventListener('click', downloadInvoiceAsPdf);
+
+async function downloadInvoiceAsPdf() {
+    const { jsPDF } = window.jspdf;
+    const invoicePreview = document.getElementById('invoice-preview');
+    
+    // Temporarily show the preview if hidden
+    const wasHidden = invoicePreview.classList.contains('hidden');
+    if (wasHidden) {
+        invoicePreview.classList.remove('hidden');
+    }
+    
+    // Add class to hide buttons
+    invoicePreview.classList.add('generating-pdf');
+    
+    // Create PDF
+    const pdf = new jsPDF('p', 'pt', 'a4');
+    await html2canvas(invoicePreview).then(canvas => {
+        const imgData = canvas.toDataURL('image/png');
+        const imgWidth = pdf.internal.pageSize.getWidth();
+        const imgHeight = canvas.height * imgWidth / canvas.width;
+        
+        pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+        pdf.save(`Invoice_${document.getElementById('preview-invoice-id').textContent}.pdf`);
+    });
+    
+    // Remove the hiding class
+    invoicePreview.classList.remove('generating-pdf');
+    
+    // Hide again if it was hidden
+    if (wasHidden) {
+        invoicePreview.classList.add('hidden');
+    }
+}
+
+
+// async function downloadInvoiceAsPdf() {
+//     const invoiceId = document.getElementById('preview-invoice-id').textContent;
+//     if (!invoiceId) {
+//         alert('No invoice selected');
+//         return;
+//     }
+
+//     try {
+//         // Show loading indicator
+//         const downloadBtn = document.getElementById('download-pdf');
+//         const originalText = downloadBtn.textContent;
+//         downloadBtn.textContent = 'Generating PDF...';
+//         downloadBtn.disabled = true;
+
+//         const response = await fetch(`${invoicesUrl}/${invoiceId}/pdf`);
+        
+//         if (!response.ok) {
+//             const errorData = await response.json().catch(() => ({}));
+//             throw new Error(errorData.message || 'Failed to generate PDF');
+//         }
+        
+//         const blob = await response.blob();
+//         const url = window.URL.createObjectURL(blob);
+//         const a = document.createElement('a');
+//         a.href = url;
+//         a.download = `Invoice_${invoiceId}.pdf`;
+//         document.body.appendChild(a);
+//         a.click();
+        
+//         // Clean up
+//         window.URL.revokeObjectURL(url);
+//         document.body.removeChild(a);
+//     } catch (error) {
+//         console.error('Error downloading PDF:', error);
+//         alert(`Error downloading PDF: ${error.message}`);
+//     } finally {
+//         // Restore button state
+//         const downloadBtn = document.getElementById('download-pdf');
+//         downloadBtn.textContent = originalText;
+//         downloadBtn.disabled = false;
+//     }
+// }

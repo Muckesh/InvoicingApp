@@ -129,3 +129,8 @@ input,select {
     font-size: 1.5em;
     font-weight: bold;
 }
+
+.generating-pdf .invoice-actions,
+.generating-pdf button {
+    display: none !important;
+}

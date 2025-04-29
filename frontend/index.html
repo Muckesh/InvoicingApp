@@ -130,7 +130,7 @@
 
             <!-- invoice preview -->
              <div id="invoice-preview" class="hidden">
-                <h2>Invoice Preview</h2>
+                <h2>Invoice</h2>
                 <div class="invoice-header">
                     <div>
                         <h3 id="preview-customer-name"></h3>
@@ -160,7 +160,8 @@
                     <p class="total-amount"> Total : Rs. <span id="preview-total-amount">0</span></p>
                 </div>
 
-                <button id="print-invoice">Print Invoice</button>
+                <!-- <button id="print-invoice">Print Invoice</button> -->
+                <button id="download-pdf">Download as PDF</button>
                 <button id="new-invoice">Create New Invoice</button>
              </div>
          </div>
@@ -187,7 +188,9 @@
           </div>
 
     </div>
-
-    <script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- <script src="js/script.js"></script> -->
+    <script type="module" src="./js/main.js"></script>
 </body>
 </html>
