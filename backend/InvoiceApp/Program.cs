@@ -1,4 +1,7 @@
+using DinkToPdf;
+using DinkToPdf.Contracts;
 using InvoiceApp.Data;
+using InvoiceApp.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +15,10 @@ builder.Services.AddDbContext<InvoiceAppContext>(options =>
 
 builder.Services.AddControllers();
 
+// Add these lines before var app = builder.Build();
+// builder.Services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
+// builder.Services.AddScoped<PdfService>();
+
 // Add CORS policy
 builder.Services.AddCors(options =>
 {
@@ -22,6 +29,7 @@ builder.Services.AddCors(options =>
                .AllowAnyHeader();
     });
 });
+
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
