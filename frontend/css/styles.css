@@ -6,13 +6,40 @@ body{
     color: #333;
 }
 
+
 .container{
     max-width: 1200px;
     margin: 0 auto;
 }
 
+
+
 h1,h2{
     color: #2c3e50;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul{
+    display: flex;
+    gap: 2rem;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover{
+    color: hsla(0, 0%, 0%, 0.759);
+}
+
+li{
+    list-style: none;
 }
 
 .section{

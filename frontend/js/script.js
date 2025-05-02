@@ -162,7 +162,7 @@ function renderProducts(){
             <td>${product.productId}</td>
             <td>${product.name}</td>
             <td>${product.description || ''}</td>
-            <td>${product.price.toFixed(2)}</td>
+            <td>Rs. ${product.price.toFixed(2)}</td>
             <td>
                 <button onclick="deleteProduct(${product.productId})">Delete</button>
             </td>
