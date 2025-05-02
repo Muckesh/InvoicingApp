@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-file-invoice"></i> Invoice Generator</h1>
+
+        <!-- Customers section -->
+        <div class="section">
+            <h2><i class="fas fa-users"></i> Customers</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="customer-name">Name</label>
+                    <input type="text" id="customer-name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-email">Email</label>
+                    <input type="email" id="customer-email" placeholder="john@example.com">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="customer-phone">Phone</label>
+                    <input type="tel" id="customer-phone" placeholder="+91 12345 67890">
+                </div>
+                <div class="form-group">
+                    <label for="customer-address">Address</label>
+                    <input type="text" id="customer-address" placeholder="123 Main St, City, Country">
+                </div>
+            </div>
+            <button id="add-customer"><i class="fas fa-plus"></i> Add Customer</button>
+            
+            <h3><i class="fas fa-list"></i> Customer List</h3>
+            <table id="customers-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="5" class="empty-state">
+                            <i class="fas fa-user-friends"></i>
+                            <p>No customers added yet</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Products section -->
+        <div class="section">
+            <h2><i class="fas fa-boxes"></i> Products</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="product-name">Name</label>
+                    <input type="text" id="product-name" placeholder="Gaming Laptop" required>
+                </div>
+                <div class="form-group">
+                    <label for="product-price">Price</label>
+                    <input type="number" id="product-price" min="0" step="1" placeholder="Rs. 62999" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="product-description">Description</label>
+                <input type="text" id="product-description" placeholder="Detailed description of the product">
+            </div>
+            <button id="add-product"><i class="fas fa-plus"></i> Add Product</button>
+            
+            <h3><i class="fas fa-list"></i> Product List</h3>
+            <table id="products-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="5" class="empty-state">
+                            <i class="fas fa-box-open"></i>
+                            <p>No products added yet</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Create Invoice section -->
+        <div class="section">
+            <h2><i class="fas fa-file-invoice-dollar"></i> Create Invoice</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="invoice-customer">Customer</label>
+                    <select id="invoice-customer" required>
+                        <option value="">Select a customer</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="invoice-due-date">Due Date</label>
+                    <input type="date" id="invoice-due-date" required>
+                </div>
+            </div>
+            
+            <h3><i class="fas fa-receipt"></i> Invoice Items</h3>
+            <div class="invoice-items">
+                <div class="item-row">
+                    <!-- <div class="form-group">
+                        <label>Product</label> -->
+                        <select class="invoice-product" required>
+                            <option value="">Select Product</option>
+                        </select>
+                    <!-- </div> -->
+                    <!-- <div class="form-group">
+                        <label>Quantity</label> -->
+                        <input type="number" min="1" class="invoice-quantity" value="1" required>
+                    <!-- </div> -->
+                    
+                        <button class="add-item"><i class="fas fa-plus"></i> Add Item</button>
+                   
+                </div>
+                <div id="invoice-items-list">
+                    <div class="empty-state-div">
+                        <i class="fas fa-info-circle"></i> 
+                        <p>No items added to invoice</p>
+                    </div>
+                </div>
+            </div>
+            <button id="create-invoice"><i class="fas fa-file-export"></i> Create Invoice</button>
+
+            <!-- invoice preview -->
+            <div id="invoice-preview" class="hidden">
+                <div class="invoice-header">
+                    <div>
+                        <h2>INVOICE</h2>
+                        <h3 id="preview-customer-name"></h3>
+                        <div id="preview-customer-details"></div>
+                    </div>
+                    <div>
+                        <p><strong>Invoice #:</strong> <span id="preview-invoice-id"></span></p>
+                        <p><strong>Date:</strong> <span id="preview-invoice-date"></span></p>
+                        <p><strong>Due Date:</strong> <span id="preview-invoice-due-date"></span></p>
+                    </div>
+                </div>
+                <table id="preview-items-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Description</th>
+                            <th>Quantity</th>
+                            <th>Unit Price</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dynamic data from api -->
+                    </tbody>
+                </table>
+                <div class="invoice-totals">
+                    <p class="total-amount">Total: <span id="preview-total-amount">0.00</span></p>
+                </div>
+
+                <div class="invoice-actions">
+                    <button id="download-pdf" class="success"><i class="fas fa-file-pdf"></i> Download as PDF</button>
+                    <button id="new-invoice" class="secondary"><i class="fas fa-plus"></i> Create New Invoice</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Invoice List -->
+        <div class="section">
+            <h2><i class="fas fa-history"></i> Invoice List</h2>
+            <table id="invoices-table">
+                <thead>
+                    <tr>
+                        <th>Invoice #</th>
+                        <th>Customer</th>
+                        <th>Date</th>
+                        <th>Due Date</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="7" class="empty-state">
+                            <i class="fas fa-file-invoice"></i>
+                            <p>No invoices created yet</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
