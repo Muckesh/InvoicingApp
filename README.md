@@ -33,6 +33,8 @@ InvoicingApp/
 
 ## Frontend Output
 ![Frontend Demo](invoice.gif)
+[View Output](invoice.gif)
+
 
 ## Backend API
 ![Backend API](invoice-api.gif)
