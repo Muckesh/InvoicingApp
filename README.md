@@ -28,6 +28,15 @@ InvoicingApp/
         └── (other ASP.NET Core files)
 ```
 
+## Database Schema
+![Database Schema](dbschema.png)
+
+## Frontend Output
+![Frontend Demo](invoice.gif)
+
+## Backend API
+![Backend API](invoice-api.gif)
+
 ## Features
 
 - **Customer Management**
