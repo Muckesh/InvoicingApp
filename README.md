@@ -62,3 +62,4 @@ InvoicingApp/
 - **Database**: The application uses Entity Framework Core with SQL Server
 - **Frontend**: Pure JavaScript with no frameworks - easy to modify
 
+## this is a small change
